@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% block content %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+    <style>
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#navbar-example">
+    <main>
+      <div class="container vh-100 d-flex justify-content-center align-items-center">
+        <h1 style="font-size: 80px; font-weight: bold;">About</h1>
+      </div>
+    </main>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>
+{% endblock %}

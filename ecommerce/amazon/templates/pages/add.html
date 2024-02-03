@@ -1,0 +1,95 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#navbar-example">
+    <main >
+        <div class="container my-5">
+            <h1 class="text-success mb-3 fs1 text-decoration-underline  text-center fw-bold">ADD PRODUCT</h1>
+            <form method='post'>
+                {% csrf_token %}
+                <div class="my-3">
+                    <label for="nameInput" class="fs-4 form-label">
+                        Name
+                    </label>
+                    <input
+                        placeholder='Enter The Name'
+                        type="text"
+                        class="form-control"
+                        id="nameInput"
+                        require
+                        name="name"
+                    />
+            
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="fs-4 form-label">
+                        Category
+                    </label>
+                    <input
+                        placeholder = 'Enter The Category'
+                        type="text"
+                        class="form-control"
+                        id="category"
+                        name="category"
+                        require
+                    />
+               
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="fs-4 form-label">
+                        Price
+                    </label>
+                    <input
+                    placeholder='Enter The Price'
+                        type="number"
+                        class="form-control"
+                        id="price"
+                        name="price"
+                        require
+                    />
+          
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="fs-4 form-label">
+                        Image URL
+                    </label>
+                    <input
+                        placeholder='Enter The Image URL'
+                        type="text"
+                        class="form-control"
+                        id="image"
+                        name="image"
+                        require
+                    />
+                
+                </div>
+          
+                </div>
+                <div class='d-flex justify-content-center aligns-items-center'>
+                    <button type="submit" class="btn fs-3 btn-success">
+                        ADD
+                    </button>
+                </div>
+
+              
+            </form>
+        
+        </div>
+        
+   
+    </main>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>
+
+
+{% endblock %}
